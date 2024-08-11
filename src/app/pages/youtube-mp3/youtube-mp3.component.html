@@ -1,0 +1,7 @@
+<div>
+  <h1>Descargar MP3</h1>
+  <label for="youtubeUrl"></label>
+  <input id="youtubeUrl" type="text" [(ngModel)]="youtubeUrl" />
+  <button (click)="downloadMP3()">Descargar</button>
+  <a href="{{ resultApi.link }}">{{ resultApi.title }}</a>
+</div>
