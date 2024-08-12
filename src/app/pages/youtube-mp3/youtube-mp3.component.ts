@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { YoutubeMP3Service } from '../../services/youtubeMP3/youtube-mp3.service';
 import { FormsModule } from '@angular/forms';
 import { IYoutubeMP3 } from '../../interfaces/youtube-mp3.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-youtube-mp3',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './youtube-mp3.component.html',
   styleUrl: './youtube-mp3.component.scss',
 })
