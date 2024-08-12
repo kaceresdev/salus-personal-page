@@ -2,7 +2,7 @@ const https = require("https");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-// const functions = require("firebase-functions");
+const functions = require("firebase-functions");
 
 const app = express();
 const port = 8443;
@@ -49,4 +49,4 @@ app.listen(port, () => {
   console.log(`Server listening on ${port}`);
 });
 
-// exports.app = functions.https.onRequest(app);
+exports.app = functions.https.onRequest(app);
