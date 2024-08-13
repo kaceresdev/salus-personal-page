@@ -1,8 +1,23 @@
-<button [routerLink]="'/'">Atras</button>
-<div>
+@if(isLoading) {
+<div id="spinner" class="spinner-overlay">
+  <div class="spinner"></div>
+</div>
+}
+<button class="back-button" [routerLink]="'/'">Atrás</button>
+<div class="youtubeMP3-content">
   <h1>Descargar MP3</h1>
   <label for="youtubeUrl"></label>
-  <input id="youtubeUrl" type="text" [(ngModel)]="youtubeUrl" />
-  <button (click)="downloadMP3()">Descargar</button>
-  <a href="{{ resultApi.link }}">{{ resultApi.title }}</a>
+  <input
+    id="youtubeUrl"
+    type="text"
+    [(ngModel)]="youtubeUrl"
+    placeholder="Youtube URL"
+  />
+  <button (click)="downloadMP3()" [disabled]="!youtubeUrl">Descargar</button>
+  <a class="youtubeMP3-content__result" href="{{ resultApi.link }}">{{
+    resultApi.title
+  }}</a>
+  @if(error) {
+  <p class="error">Se ha producido un ERROR. Vuelve a intentarlo.</p>
+  }
 </div>

@@ -13,6 +13,8 @@ import { RouterLink } from '@angular/router';
 })
 export class YoutubeMP3Component {
   youtubeUrl: string = '';
+  isLoading = false;
+  error = false;
   resultApi: IYoutubeMP3 = {
     link: '',
     title: '',
@@ -26,6 +28,8 @@ export class YoutubeMP3Component {
   constructor(private youtubeMp3Service: YoutubeMP3Service) {}
 
   downloadMP3() {
+    this.isLoading = true;
+    this.error = false;
     const url = new URL(this.youtubeUrl);
     const queryParams = new URLSearchParams(url.search);
     const keyVValue = queryParams.get('v');
@@ -34,9 +38,14 @@ export class YoutubeMP3Component {
       next: (resp) => {
         console.log('Link success ', resp);
         this.resultApi = resp;
+        this.youtubeUrl = '';
+        this.isLoading = false;
       },
       error: (err) => {
         console.error('An error occurred :', err);
+        this.youtubeUrl = '';
+        this.isLoading = false;
+        this.error = true;
       },
       complete: () => {
         console.log('There are no more action happen.');

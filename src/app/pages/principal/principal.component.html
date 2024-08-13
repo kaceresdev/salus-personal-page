@@ -1,1 +1,16 @@
-<a [routerLink]="['/youtubeMP3']">Youtube</a>
+<div class="profile-header">
+  <img src="assets/imgs/salusAvatar.jpeg" />
+  <div class="profile-header__info">
+    <h1>Salustiano Blázquez López</h1>
+    <p>
+      Página web en la que se encuentran los enlaces y las tareas que más
+      utiliza Salus.
+    </p>
+  </div>
+</div>
+<div class="direct-access">
+  <div class="direct-access__box" [routerLink]="['/youtubeMP3']">
+    <img src="assets/imgs/youtubeMP3.png" alt="" />
+    <p>Youtube a MP3</p>
+  </div>
+</div>
