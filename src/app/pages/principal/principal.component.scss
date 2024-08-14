@@ -42,7 +42,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap;
-    box-shadow: inset 0px 0px 30px -15px rgb(230 44 40);
+    box-shadow: inset 0px 0px 30px -15px var(--color);
     &:hover {
       transform: scale(1.05);
       cursor: pointer;
