@@ -36,10 +36,20 @@ export class YoutubeMP3Component {
 
     this.youtubeMp3Service.youtubeToMp3(keyVValue!).subscribe({
       next: (resp) => {
-        console.log('Link success ', resp);
-        this.resultApi = resp;
-        this.youtubeUrl = '';
-        this.isLoading = false;
+        if (resp.status === 'processing') {
+          setTimeout(() => {
+            this.downloadMP3();
+          }, 1000);
+        } else if (resp.status === 'fail') {
+          this.youtubeUrl = '';
+          this.isLoading = false;
+          this.error = true;
+        } else {
+          console.log('Link success ', resp);
+          this.resultApi = resp;
+          this.youtubeUrl = '';
+          this.isLoading = false;
+        }
       },
       error: (err) => {
         console.error('An error occurred :', err);
