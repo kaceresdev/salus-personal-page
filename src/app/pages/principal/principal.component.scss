@@ -43,6 +43,8 @@
     justify-content: center;
     flex-wrap: nowrap;
     box-shadow: inset 0px 0px 30px -15px var(--color);
+    text-decoration: none;
+    color: inherit;
     &:hover {
       transform: scale(1.05);
       cursor: pointer;

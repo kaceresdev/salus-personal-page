@@ -19,10 +19,28 @@
   </div>
   <div
     class="direct-access__box"
+    [ngStyle]="{ '--color': '#ffca00' }"
+    [routerLink]="['/loteriaNavidad']"
+  >
+    <img src="assets/imgs/loteriaNavidad.png" alt="" />
+    <p>Lotería Navidad</p>
+  </div>
+  <div
+    class="direct-access__box"
     [ngStyle]="{ '--color': '#1c64c6' }"
     [routerLink]="['/pdf-word']"
   >
     <img src="assets/imgs/pdfWord.png" alt="" />
     <p>PDF a Word</p>
   </div>
+  <a
+    class="direct-access__box"
+    [ngStyle]="{ '--color': '#0d9488' }"
+    href="https://1drv.ms/x/c/6286a34f8183e22a/IQBJT4Dx0vZ6RoBk1dINiE5mAU3wUVwMZcCGDyy9ZbQz1J4?e=LJCKO1"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img src="assets/imgs/registroSalud.png" alt="Registro de salud" />
+    <p>Registro</p>
+  </a>
 </div>
